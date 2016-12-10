@@ -1,0 +1,28 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+syntax on
+" enable default file type detection
+filetype plugin indent on
+set number
+set autoindent
+
+" make navigating splits more succinct, copied from
+" https://teamgaslight.com/blog/vim-plus-tmux-a-perfect-match
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+set cursorline " underline current line
+
+" Go stuff:
+"
+" goimports on save instead of gofmt.  Just makes managing imports easier
+let g:go_fmt_command = "goimports"
+" from https://github.com/fatih/vim-go-tutorial
+" These may have too big of a performance impact so they're sometimes commented out.
+" automatically call :GoInfo on hover
+let g:go_auto_type_info = 1
+" automatically highlight matching identifiers on hover, :GoSameIds
+let g:go_auto_sameids = 1
