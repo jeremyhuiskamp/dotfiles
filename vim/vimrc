@@ -14,7 +14,11 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-set cursorline " underline current line
+" buggy on macOS:
+"set cursorline " underline current line
+
+" without these, acts like vi, limiting what you can backspace over:
+set backspace=indent,eol,start
 
 " Go stuff:
 "
