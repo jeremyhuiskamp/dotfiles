@@ -1,4 +1,13 @@
 #!/bin/bash
+
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# set content of prompt
+export PS1='\W$ '
+export PS1="\[\e[0;34m\]$PS1\[\e[0m\]"
+
 alias ls='ls -F'
 alias ll='ls -l'   # list details
 alias la='ls -a'   # list all
@@ -182,6 +191,24 @@ alias gsh='LESS=IR git show --color'
 alias grd='git diff --name-only --diff-filter=D --relative -z -- . | xargs -0 git rm'
 
 alias gsync='git fetch && gnmp'
+
+# for forwarding over ssh connections:
+export GIT_AUTHOR_NAME=$(git config user.name)
+export GIT_AUTHOR_EMAIL=$(git config user.email)
+
+set -o vi
+
+alias doco=docker-compose
+alias tf=terraform
+
+[ type kubectl &>/dev/null ] && source <(kubectl completion bash)
+[ type minikube &>/dev/null ] && source <(minikube completion bash)
+
+# careful of subprocesses when exporting vars:
+# https://stackoverflow.com/questions/7390497/bash-propagate-value-of-variable-to-outside-of-the-loop
+while read f; do
+	. $f
+done < <(find "$HOME/.bashrc.d/" -name '*.sh')
 
 # start tmux by default (nb: this needs to be the last thing in .bashrc)
 if [[ "$TERM" != "screen-256color" ]]; then
