@@ -1,6 +1,8 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+set directory=$HOME/tmp/vimswap//
+
 syntax on
 " enable default file type detection
 filetype plugin indent on
