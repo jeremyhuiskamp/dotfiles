@@ -40,3 +40,5 @@ let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 " automatically highlight matching identifiers on hover, :GoSameIds
 let g:go_auto_sameids = 1
+" Rendering in vim-go seems to get messed up often, so this is an efficient redraw.
+nnoremap <leader>r :redr!<CR>
