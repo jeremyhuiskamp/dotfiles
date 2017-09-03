@@ -31,6 +31,9 @@ vnoremap kj <Esc>
 " without these, acts like vi, limiting what you can backspace over:
 set backspace=indent,eol,start
 
+" show cursor position & file percentage in status bar:
+set ruler
+
 " Go stuff:
 "
 " goimports on save instead of gofmt.  Just makes managing imports easier
