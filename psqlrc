@@ -1,0 +1,19 @@
+-- see https://www.citusdata.com/blog/2017/07/16/customizing-my-postgres-shell-using-psqlrc/ for some discussion
+
+\set QUIET -- don't log during this initialization
+
+-- visual display of nulls with an otherwise-unlikely character:
+\pset null '¤'
+
+\timing
+
+-- for wide output, list columns vertically
+\pset expanded auto
+
+-- Per database history files.
+-- NB: this is not per-host, so databases with the same name on different hosts
+--     will share history.  Per-host would be tough, as connections are often
+--     tunneled over ssh, making psql unaware of where it's really connecting.
+\set HISTFILE ~/.psql_history- :DBNAME
+
+\unset QUIET -- back to normal logging
