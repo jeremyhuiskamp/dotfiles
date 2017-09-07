@@ -1,6 +1,7 @@
 -- see https://www.citusdata.com/blog/2017/07/16/customizing-my-postgres-shell-using-psqlrc/ for some discussion
 
-\set QUIET -- don't log during this initialization
+-- don't log during this initialization
+\set QUIET
 
 -- visual display of nulls with an otherwise-unlikely character:
 \pset null '¤'
@@ -16,4 +17,13 @@
 --     tunneled over ssh, making psql unaware of where it's really connecting.
 \set HISTFILE ~/.psql_history- :DBNAME
 
-\unset QUIET -- back to normal logging
+-- http://www.craigkerstiens.com/2013/02/21/more-out-of-psql/
+-- Execute this with `:cache_hit_rate`
+\set cache_hit_rate 'SELECT sum(heap_blks_read) as heap_read, sum(heap_blks_hit)  as heap_hit, sum(heap_blks_hit) / (sum(heap_blks_hit) + sum(heap_blks_read)) as ratio FROM pg_statio_user_tables;'
+
+\set index_usage 'SELECT relname, 100 * idx_scan / (seq_scan + idx_scan) percent_of_times_index_used, n_live_tup rows_in_table FROM pg_stat_user_tables WHERE seq_scan + idx_scan > 0 ORDER BY n_live_tup DESC;'
+
+# TODO: figure out how to line-break those queries
+
+-- back to normal logging
+\unset QUIET
