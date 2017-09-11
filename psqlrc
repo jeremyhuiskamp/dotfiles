@@ -23,7 +23,7 @@
 
 \set index_usage 'SELECT relname, 100 * idx_scan / (seq_scan + idx_scan) percent_of_times_index_used, n_live_tup rows_in_table FROM pg_stat_user_tables WHERE seq_scan + idx_scan > 0 ORDER BY n_live_tup DESC;'
 
-# TODO: figure out how to line-break those queries
+-- TODO: figure out how to line-break those queries
 
 -- back to normal logging
 \unset QUIET
