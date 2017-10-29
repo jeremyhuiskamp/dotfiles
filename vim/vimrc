@@ -16,15 +16,6 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" the touchbar finally forces me to explore alternatives to escape:
-inoremap kj <Esc>
-vnoremap kj <Esc>
-" TODO: also insert-w-paste and other modes?
-" (It's tempting to map <Esc> to <nop> for training, but this has
-"  side effects such as breaking the arrow keys.)
-"inoremap <Esc> <nop>
-"vnoremap <Esc> <nop>
-
 " buggy on macOS:
 "set cursorline " underline current line
 

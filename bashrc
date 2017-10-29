@@ -197,10 +197,6 @@ export GIT_AUTHOR_NAME=$(git config user.name)
 export GIT_AUTHOR_EMAIL=$(git config user.email)
 
 set -o vi
-# in vi mode, remap escape to how I have it in vim:
-# (note that this suppresses 'k' until the next key is pressed,
-#  and double-k only enters one character)
-bind '"kj":vi-movement-mode'
 
 alias doco=docker-compose
 alias tf=terraform
