@@ -1,8 +1,6 @@
 [user]
 	name = Jeremy Huiskamp
 	email = jeremy.huiskamp@gmail.com
-[push]
-	default = current
 [credential]
 	helper = osxkeychain
 [core]
