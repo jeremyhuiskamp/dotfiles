@@ -6,7 +6,7 @@ export LESS=IR
 
 export EDITOR=vim
 export PAGER=less
-export GOPATH=$HOME/src/self/go
+export GOPATH=$HOME/src/go
 
 export PATH=$PATH:$GOPATH/bin
 
