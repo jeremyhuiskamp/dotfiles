@@ -41,3 +41,8 @@ let g:go_auto_sameids = 1
 let g:go_autodetect_gopath = 0
 " Rendering in vim-go seems to get messed up often, so this is an efficient redraw.
 nnoremap <leader>r :redr!<CR>
+
+" :GoCoverageToggle
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+" :GoTestCompile
+autocmd FileType go nmap <Leader>tc <Plug>(go-test-compile)
