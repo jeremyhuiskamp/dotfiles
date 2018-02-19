@@ -38,7 +38,6 @@ let g:go_auto_sameids = 1
 " vim-go's smartness seems to prepend incorrect paths to GOPATH, but the
 " smartness is only needed for alternative vendoring tools which I don't use
 " so it can be completely disabled:
-let g:go_autodetect_gopath = 0
 " Rendering in vim-go seems to get messed up often, so this is an efficient redraw.
 nnoremap <leader>r :redr!<CR>
 
