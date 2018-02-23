@@ -25,6 +25,10 @@ set backspace=indent,eol,start
 " show cursor position & file percentage in status bar:
 set ruler
 
+" vsplit buffers to to the right of the current one
+" because this seems more natural to me for some reason
+set splitright
+
 " Go stuff:
 "
 " goimports on save instead of gofmt.  Just makes managing imports easier
@@ -41,7 +45,17 @@ let g:go_auto_sameids = 1
 " Rendering in vim-go seems to get messed up often, so this is an efficient redraw.
 nnoremap <leader>r :redr!<CR>
 
-" :GoCoverageToggle
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
-" :GoTestCompile
 autocmd FileType go nmap <Leader>tc <Plug>(go-test-compile)
+" Wishlist for searching declarations:
+" - make it universal to the project
+" - possibly filter out test code if not in a test file
+" - when hovering on an identifier, show only relevant decls
+"   (eg methods on a type)
+autocmd FileType go nmap <Leader>d :GoDeclsDir<cr>
+
+" Copied from https://github.com/fatih/vim-go-tutorial
+" Open corresponding test(ed) file in place or split
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
