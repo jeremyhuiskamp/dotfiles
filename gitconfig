@@ -5,3 +5,5 @@
 	helper = osxkeychain
 [core]
 	excludesfile = /Users/jeremy/.gitignore_global
+[alias]
+	fp = push --force-with-lease
