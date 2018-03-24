@@ -211,8 +211,12 @@ while read f; do
 done < <(find "$HOME/.bashrc.d/" -name '*.sh')
 
 # start tmux by default (nb: this needs to be the last thing in .bashrc)
-if [[ "$TERM" != "screen-256color" ]]; then
-	tmux attach-session -t "$USER" || tmux new-session -s "$USER"
+if [[ -z "$TMUX" ]]; then
+	if tmux has-session -t "$USER" &>/dev/null; then
+		tmux attach-session -t "$USER"
+	else
+		tmux new-session -s "$USER"
+	fi
 	# if commented, can get back to non-tmux shell, but have to exit twice
 	# to get all the way out:
 	#exit
