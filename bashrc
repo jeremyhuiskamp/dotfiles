@@ -209,15 +209,3 @@ alias tf=terraform
 while read f; do
 	. $f
 done < <(find "$HOME/.bashrc.d/" -name '*.sh')
-
-# start tmux by default (nb: this needs to be the last thing in .bashrc)
-if [[ -z "$TMUX" ]]; then
-	if tmux has-session -t "$USER" &>/dev/null; then
-		tmux attach-session -t "$USER"
-	else
-		tmux new-session -s "$USER"
-	fi
-	# if commented, can get back to non-tmux shell, but have to exit twice
-	# to get all the way out:
-	#exit
-fi
