@@ -16,6 +16,19 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" Alternative to <Esc> for insert mode, necessitated by the touchbar.
+"
+" This is only safe if also using the bracketed-paste plugin.  Otherwise
+" pasting text containing this sequence is interpreted as <Esc> and anything
+" that follows the sequence is executed as normal mode commands.
+"
+" kj is very fast to type and uncommon enough to not cause problems in insert
+" mode.  It would cause problems in visual mode, where these keys are used for
+" navigation.  It's not clear if there's a combination that is unobtrusive in
+" all modes, so that escape behaviour can be kept consistent.  Falling back on
+" <ctrl-[>, while harder to type, should cover the other modes.
+inoremap kj <Esc>
+
 " buggy on macOS:
 "set cursorline " underline current line
 
