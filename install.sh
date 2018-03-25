@@ -8,6 +8,10 @@ for src in config/nvim bash_profile bashrc bashrc.d gitconfig gitignore_global i
 	# remove existing symlinks:
 	[ -L ~/.${src} ] && rm ~/.${src}
 	# back up existing real files:
-	[ -e ~/.${src} ] && mv ~/.${src} ${BASEDIR}/backups/${src}.${RUNTIME}
+	if [ -e ~/.${src} ]; then
+		backup=${BASEDIR}/backups/${src}.${RUNTIME}
+		mkdir -p $(dirname ${backup})
+		mv ~/.${src} ${backup}
+	fi
 	ln -s ${BASEDIR}/${src} ~/.${src}
 done
