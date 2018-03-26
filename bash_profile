@@ -19,7 +19,7 @@ fi
 # F = exit immediately if content doesn't fill the screen
 export LESS=IR
 
-export EDITOR=vim
+export EDITOR=nvim
 export PAGER=less
 export GOPATH=$HOME/src/go
 
