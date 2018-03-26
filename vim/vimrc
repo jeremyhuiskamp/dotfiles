@@ -42,6 +42,10 @@ set ruler
 " because this seems more natural to me for some reason
 set splitright
 
+" Hides statusline if there's only one window.
+" vim default, which neovim changed to 2.
+set laststatus=1
+
 " Go stuff:
 "
 " goimports on save instead of gofmt.  Just makes managing imports easier
