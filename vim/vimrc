@@ -46,6 +46,11 @@ set splitright
 " vim default, which neovim changed to 2.
 set laststatus=1
 
+" Status line theme for airline plugin.
+" The default is garish and for some reason, solarized doesn't seem to work,
+" so this is a basic compromise.
+let g:airline_theme='minimalist'
+
 " Go stuff:
 "
 " goimports on save instead of gofmt.  Just makes managing imports easier

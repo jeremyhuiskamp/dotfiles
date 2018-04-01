@@ -16,3 +16,9 @@
 [submodule "vim/pack/arbs/start/vim-bracketed-paste"]
 	path = vim/pack/arbs/start/vim-bracketed-paste
 	url = git@github.com:ConradIrwin/vim-bracketed-paste.git
+[submodule "vim/pack/arbs/start/vim-airline"]
+	path = vim/pack/arbs/start/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "vim/pack/arbs/start/vim-airline-themes"]
+	path = vim/pack/arbs/start/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
