@@ -50,6 +50,14 @@ set laststatus=1
 " The default is garish and for some reason, solarized doesn't seem to work,
 " so this is a basic compromise.
 let g:airline_theme='minimalist'
+" Show filename relative to working directory:
+let g:airline#extensions#tabline#fnamemod = ':p:.'
+" TODO: show the working directory somewhere.
+" Ideal might be right before file name, with a separator to indicate cwd.
+" However, this can be quite long, so some truncations would be helpful.
+" - relative to GOPATH ?
+" - relative to ~ ?
+" - relative to .git/ ?
 
 " Go stuff:
 "
