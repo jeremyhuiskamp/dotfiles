@@ -53,6 +53,20 @@ colorscheme solarized
 " fzf search through file names in the current git repository
 nnoremap <leader>f :GFiles<CR>
 
+" As defined in fzf.vim/README.md, this uses git grep to feed fzf
+" with all the file content in the repository.
+" This is slightly odd, as it is similar to fugitive's Ggrep in name and
+" functionality.
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number '.shellescape(<q-args>), 0,
+  \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+" Shortcut for starting GGrep.
+" Note that this doesn't give git grep a chance to do any filtering, so we're
+" just spewing the entire repo contents.
+" TODO: figure out how to map this without needing to define a separate command
+nnoremap <Leader>g :GGrep<cr>
+
 " Go stuff:
 "
 " goimports on save instead of gofmt.  Just makes managing imports easier
@@ -73,6 +87,10 @@ autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 autocmd FileType go nmap <Leader>tc <Plug>(go-test-compile)
 " Wishlist for searching declarations:
 " - make it universal to the project
+"   - see :GGrep above for an example of searching entire git repo
+"   - vim-go could theoretically dump all identifiers in $GOPATH
+"     - but using the underlying motion command, it does max one dir at a time
+"     - there will be duplicates; need to prefer versions in vendor/
 " - possibly filter out test code if not in a test file
 " - when hovering on an identifier, show only relevant decls
 "   (eg methods on a type)
