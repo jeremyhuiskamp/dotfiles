@@ -22,3 +22,6 @@
 [submodule "vim/pack/arbs/start/haskell-vim"]
 	path = vim/pack/arbs/start/haskell-vim
 	url = https://github.com/neovimhaskell/haskell-vim.git
+[submodule "vim/pack/arbs/start/elm-vim"]
+	path = vim/pack/arbs/start/elm-vim
+	url = git@github.com:ElmCast/elm-vim.git
