@@ -6,4 +6,7 @@
 [core]
 	excludesfile = /Users/jeremy/.gitignore_global
 [alias]
+	# safely push rebases:
 	fp = push --force-with-lease
+	# catch up to upstream only if it wouldn't result in a merge:
+	ff = merge --ff-only '@{u}'

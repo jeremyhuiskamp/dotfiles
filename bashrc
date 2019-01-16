@@ -146,18 +146,6 @@ gnpp() {
     LESS=IR git log --oneline origin/$branch..$branch --color -p "$@"
 }
 
-# fast forward in the current branch (only works for remotes/origin branches)
-gff() {
-    # please don't have spaces or metacharaters in your branch name!
-    branch=$(git branch | egrep '^\*' | awk '{print $2}')
-    remote=$(git branch -r | egrep '^ *origin/'$branch'$')
-    if [ "$remote" ]; then
-        git merge --ff-only $remote
-    else
-        echo "No origin branch to merge" 1>&2
-    fi
-}
-
 # rebases onto the remotes/origin branch of the same name
 # not sure why rebase doesn't have an option for this already
 gro() {
