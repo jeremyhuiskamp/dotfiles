@@ -46,6 +46,10 @@ set splitright
 " vim default, which neovim changed to 2.
 set laststatus=1
 
+let g:solarized_termcolors=256
+set background=light
+colorscheme solarized
+
 " fzf search through file names in the current git repository
 nnoremap <leader>f :GFiles<CR>
 

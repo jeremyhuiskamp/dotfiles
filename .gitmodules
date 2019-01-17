@@ -16,3 +16,6 @@
 [submodule "vim/pack/arbs/start/vim-bracketed-paste"]
 	path = vim/pack/arbs/start/vim-bracketed-paste
 	url = git@github.com:ConradIrwin/vim-bracketed-paste.git
+[submodule "vim/pack/arbs/start/vim-colors-solarized"]
+	path = vim/pack/arbs/start/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
