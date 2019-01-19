@@ -25,3 +25,6 @@
 [submodule "vim/pack/arbs/start/elm-vim"]
 	path = vim/pack/arbs/start/elm-vim
 	url = git@github.com:ElmCast/elm-vim.git
+[submodule "vim/pack/arbs/start/ale"]
+	path = vim/pack/arbs/start/ale
+	url = git@github.com:w0rp/ale.git
