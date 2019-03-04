@@ -105,6 +105,5 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 " ale assumes it has exclusive access to the location list, which can be quite annoying.
 " See https://github.com/w0rp/ale/issues/1482#issuecomment-379563307 for details.
 " https://github.com/w0rp/ale/issues/1810 seems to be what I would want.
+" NB: it can be configured to use the quickfix list, but this is just as bad
 let g:ale_set_loclist = 0
-" Not sure if this will be less invasive, but trying it:
-let g:ale_set_quickfix = 1
