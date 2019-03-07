@@ -28,3 +28,6 @@
 [submodule "vim/pack/arbs/start/ale"]
 	path = vim/pack/arbs/start/ale
 	url = git@github.com:w0rp/ale.git
+[submodule "vim/pack/arbs/start/vim-unimpaired"]
+	path = vim/pack/arbs/start/vim-unimpaired
+	url = git@github.com:tpope/vim-unimpaired.git
