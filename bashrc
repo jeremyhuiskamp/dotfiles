@@ -181,8 +181,10 @@ alias grd='git diff --name-only --diff-filter=D --relative -z -- . | xargs -0 gi
 alias gsync='git fetch && gnmp'
 
 # for forwarding over ssh connections:
-export GIT_AUTHOR_NAME=$(git config user.name)
-export GIT_AUTHOR_EMAIL=$(git config user.email)
+# Disabled because I don't currently need it, and it overrides changes
+# to the git config that may be made later (eg on a per-repository basis).
+# export GIT_AUTHOR_NAME=$(git config user.name)
+# export GIT_AUTHOR_EMAIL=$(git config user.email)
 
 set -o vi
 
