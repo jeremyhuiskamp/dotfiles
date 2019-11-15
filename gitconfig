@@ -1,6 +1,11 @@
 [user]
 	name = Jeremy Huiskamp
 	email = jeremy.huiskamp@gmail.com
+[includeIf "gitdir:~/src/sn/"]
+	# A directory specifically for overriding some
+	# configuration for work purposes.
+	# Eg, overrride user.email here:
+	path = ~/src/sn/gitconfig
 [credential]
 	helper = osxkeychain
 [core]
