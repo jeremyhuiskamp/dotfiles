@@ -33,3 +33,8 @@ export PATH=$PATH:$HOME/bin
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
+
+# https://support.apple.com/en-us/HT208050
+# Don't warn about zsh being the default on every new shell.
+# TODO: try porting all my bash config to zsh...
+export BASH_SILENCE_DEPRECATION_WARNING=1
