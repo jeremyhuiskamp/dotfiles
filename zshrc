@@ -62,6 +62,11 @@ export PAGER=less
 export EDITOR=nvim
 export MANWIDTH=100
 
+if type jenv &>/dev/null; then
+  eval "$(jenv init -)"
+fi
+export JAVA_HOME=$(jenv javahome)
+
 # Things still to do:
 # - git aliases / functions
 # - a zshrc.d?
