@@ -3,7 +3,12 @@ if [[ -z "$TMUX" ]]; then
   # TODO: revisit the idea of re-connecting to an existing shell.
   # I more often accidentally connect from multiple clients than
   # fail to connect to an existing background shell.
-  tmux new-session -A -s "$USER-zsh" /bin/zsh
+
+  # Don't do this for now because, eg, VisualStudio tries to start a new shell,
+  # gets connected to tmux, and then weird things happen.
+  #tmux new-session -A -s "$USER-zsh" /bin/zsh
+  echo "not starting zsh tmux session due to other things like IDEs that don't play well with it"
+
   # Now we're back to the original shell, having either
   # closed or detached from the session.  We continue with
   # setup so that we have a usable shell outside of tmux.

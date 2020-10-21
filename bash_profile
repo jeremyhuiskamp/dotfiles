@@ -4,9 +4,11 @@
 # inheriting the parent env and then updating it again.
 if [[ -z "$TMUX" ]]; then
 	if tmux has-session -t "$USER" &>/dev/null; then
-		tmux attach-session -t "$USER"
+		echo declining to attach to tmux session '"'$USER'"'
+		#tmux attach-session -t "$USER"
 	else
-		tmux new-session -s "$USER"
+		echo declining to create new tmux session '"'$USER'"'
+		#tmux new-session -s "$USER"
 	fi
 	# Now we're back to the original shell, having either
 	# closed or detached from the session.  We continue with
