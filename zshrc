@@ -77,8 +77,8 @@ alias man='MANWIDTH=$((COLUMNS > 80 ? 80 : COLUMNS)) man'
 
 if type jenv &>/dev/null; then
   eval "$(jenv init -)"
+  export JAVA_HOME=$(jenv javahome)
 fi
-export JAVA_HOME=$(jenv javahome)
 
 # Things still to do:
 # - git aliases / functions
