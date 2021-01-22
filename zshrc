@@ -27,6 +27,8 @@ setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%F{red}(%b)%f'
 
 # exit code in red, if not 0 & bold blue current path:
+# idea: add some red ()s to differentiate from other shell output
+#   eg, `fd` tends to prefix output with a blue string
 PROMPT='%(?..%F{red}?%?%f )%B%F{blue}%1~%#%f%b '
 # show git info and date/time on the right
 RPROMPT='${vcs_info_msg_0_} %D %*'
@@ -65,7 +67,13 @@ alias hex='open -a "Hex Fiend"'
 export LESS=IR
 export PAGER=less
 export EDITOR=nvim
-export MANWIDTH=100
+
+# For man pages, we need a maximum width, but it should
+# be smaller if the terminal is smaller, so MANWIDTH needs
+# to be calculated on the fly.  This still doesn't work
+# well if the terminal is resized while man is open, but
+# that doesn't seem solveable.
+alias man='MANWIDTH=$((COLUMNS > 80 ? 80 : COLUMNS)) man'
 
 if type jenv &>/dev/null; then
   eval "$(jenv init -)"
