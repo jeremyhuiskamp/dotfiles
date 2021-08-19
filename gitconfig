@@ -15,3 +15,7 @@
 	fp = push --force-with-lease
 	# catch up to upstream only if it wouldn't result in a merge:
 	ff = merge --ff-only '@{u}'
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
