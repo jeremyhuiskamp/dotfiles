@@ -31,3 +31,6 @@
 [submodule "vim/pack/arbs/start/vim-unimpaired"]
 	path = vim/pack/arbs/start/vim-unimpaired
 	url = git@github.com:tpope/vim-unimpaired.git
+[submodule "vim/pack/arbs/start/vim-terraform"]
+	path = vim/pack/arbs/start/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git

@@ -107,3 +107,6 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 " https://github.com/w0rp/ale/issues/1810 seems to be what I would want.
 " NB: it can be configured to use the quickfix list, but this is just as bad
 let g:ale_set_loclist = 0
+
+" https://github.com/hashivim/vim-terraform
+let g:terraform_fmt_on_save=1
