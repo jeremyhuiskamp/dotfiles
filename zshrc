@@ -1,3 +1,6 @@
+# enable this and zprof at the end to debug slow shell startup:
+# zmodload zsh/zprof
+
 # start or attach to tmux
 if [[ -z "$TMUX" ]]; then
   # TODO: revisit the idea of re-connecting to an existing shell.
@@ -94,3 +97,5 @@ export NVM_DIR="$HOME/.nvm"
 export DOTNET_CLI_TELEMETRY_OPTOUT=true
 
 eval "$(zoxide init zsh)"
+
+# zprof
