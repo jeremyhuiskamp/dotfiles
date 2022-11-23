@@ -6,7 +6,7 @@
 	url = git@github.com:fatih/vim-go.git
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+	url = git@github.com:tpope/vim-fugitive.git
 [submodule "vim/pack/arbs/start/vim-commentary"]
 	path = vim/pack/arbs/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -18,7 +18,7 @@
 	url = git@github.com:ConradIrwin/vim-bracketed-paste.git
 [submodule "vim/pack/arbs/start/vim-colors-solarized"]
 	path = vim/pack/arbs/start/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = git@github.com:altercation/vim-colors-solarized.git
 [submodule "vim/pack/arbs/start/haskell-vim"]
 	path = vim/pack/arbs/start/haskell-vim
 	url = https://github.com/neovimhaskell/haskell-vim.git
