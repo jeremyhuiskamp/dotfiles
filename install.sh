@@ -6,7 +6,7 @@ RUNTIME=$(date "+%Y-%m-%dT%H:%M:%S")
 
 mkdir -p ~/.config
 
-for src in config/nvim bash_profile bashrc bashrc.d gitconfig gitignore_global irbrc tmux.conf vim psqlrc zshrc; do
+for src in config/nvim bash_profile bashrc bashrc.d gitconfig gitignore_global irbrc tmux.conf vim psqlrc zshrc zprofile; do
 	# remove existing symlinks:
 	[ -L ~/.${src} ] && rm ~/.${src}
 	# back up existing real files:
