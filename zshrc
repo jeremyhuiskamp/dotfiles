@@ -37,8 +37,13 @@ PROMPT='%(?..%F{red}?%?%f )%B%F{blue}%1~%#%f%b '
 RPROMPT='${vcs_info_msg_0_} %D %*'
 
 # enable completion:
+if type brew &>/dev/null
+then
+  FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
+fi
 autoload -Uz compinit
 compinit
+autoload -U +X bashcompinit && bashcompinit
 
 # vi mode:
 bindkey -v
@@ -87,8 +92,6 @@ fi
 # - git aliases / functions
 # - a zshrc.d?
 # - anything obviously missing from my bash stuff
-
-autoload -U +X bashcompinit && bashcompinit
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
