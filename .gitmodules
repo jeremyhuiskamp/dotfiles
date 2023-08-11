@@ -34,3 +34,6 @@
 [submodule "vim/pack/arbs/start/vim-terraform"]
 	path = vim/pack/arbs/start/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule "vim/pack/arbs/start/vim-cue"]
+	path = vim/pack/arbs/start/vim-cue
+	url = git@github.com:jjo/vim-cue.git
