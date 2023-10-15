@@ -99,6 +99,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=true
 
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd a zsh)"
 
 # zprof
