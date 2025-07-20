@@ -67,6 +67,9 @@ command! -bang -nargs=* GGrep
 " TODO: figure out how to map this without needing to define a separate command
 nnoremap <Leader>g :GGrep<cr>
 
+" fzf suggested config as per Modern Vim:
+nnoremap <C-p> :<C-u>FZF<CR>
+
 " Go stuff:
 "
 " goimports on save instead of gofmt.  Just makes managing imports easier
@@ -85,6 +88,7 @@ nnoremap <leader>r :redr!<CR>
 
 autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 autocmd FileType go nmap <Leader>tc <Plug>(go-test-compile)
+autocmd FileType go nmap <Leader>t <Plug>(go-test)
 " Wishlist for searching declarations:
 " - make it universal to the project
 "   - see :GGrep above for an example of searching entire git repo
