@@ -1,0 +1,18 @@
+# These are things that are known to require sudo, which is really annoying to have in the middle of
+# a normal update.  They probably don't update often, so lets just run them as a batch where I can
+# periodically take the time to type my password repeatedly.
+
+
+# Via https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
+tap "microsoft/git"
+cask "git-credential-manager-core"
+
+# newer home of adoptopenjdk, adoptium:
+cask "temurin17"
+cask "temurin"
+cask "temurin@20"
+cask "temurin@21"
+
+cask "session-manager-plugin"
+
+cask "wireshark"
