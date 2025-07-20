@@ -40,3 +40,4 @@ fi
 # Don't warn about zsh being the default on every new shell.
 # TODO: try porting all my bash config to zsh...
 export BASH_SILENCE_DEPRECATION_WARNING=1
+. "$HOME/.cargo/env"

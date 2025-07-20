@@ -199,3 +199,4 @@ alias tf=terraform
 while read f; do
 	. $f
 done < <(find "$HOME/.bashrc.d/" -name '*.sh')
+. "$HOME/.cargo/env"
