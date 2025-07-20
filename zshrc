@@ -1,26 +1,6 @@
 # enable this and zprof at the end to debug slow shell startup:
 # zmodload zsh/zprof
 
-# start or attach to tmux
-if [[ -z "$TMUX" ]]; then
-  # TODO: revisit the idea of re-connecting to an existing shell.
-  # I more often accidentally connect from multiple clients than
-  # fail to connect to an existing background shell.
-
-  # Don't do this for now because, eg, VisualStudio tries to start a new shell,
-  # gets connected to tmux, and then weird things happen.
-  #tmux new-session -A -s "$USER-zsh" /bin/zsh
-  echo "not starting zsh tmux session due to other things like IDEs that don't play well with it"
-
-  # Now we're back to the original shell, having either
-  # closed or detached from the session.  We continue with
-  # setup so that we have a usable shell outside of tmux.
-else
-  # until zsh is my default shell, make sure this tmux
-  # session keeps starting new shells with zsh:
-  tmux set-option default-shell /bin/zsh
-fi
-
 # enable git prompts, as per
 # https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh
 autoload -Uz vcs_info
