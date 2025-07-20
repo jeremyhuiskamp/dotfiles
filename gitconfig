@@ -7,7 +7,11 @@
 	# Eg, overrride user.email here:
 	path = ~/src/bs/gitconfig
 [credential]
-	helper = osxkeychain
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+	# installed via brew:
+	# see https://github.com/git-ecosystem/git-credential-manager/blob/main/docs/autodetect.md
+	# for details about github enterprise configuration
 [core]
 	excludesfile = /Users/jeremy/.gitignore_global
 [alias]
@@ -21,3 +25,6 @@
 	defaultBranch = main
 [diff]
 	tool = opendiff
+	#external = difft
+[credential "https://dev.azure.com"]
+	useHttpPath = true
